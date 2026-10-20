@@ -1,0 +1,71 @@
+{
+  "name": "pi-market-terminal",
+  "version": "0.8.1",
+  "description": "A second-screen market workspace for Pi: watchlists, financial news, daily charts, economic releases and in-terminal live TV.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Pedro Relvas",
+    "url": "https://github.com/PRELVAS94"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PRELVAS94/pi-market-terminal.git"
+  },
+  "homepage": "https://github.com/PRELVAS94/pi-market-terminal#readme",
+  "bugs": {
+    "url": "https://github.com/PRELVAS94/pi-market-terminal/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "finance",
+    "markets",
+    "stocks",
+    "watchlist",
+    "news",
+    "terminal",
+    "tui",
+    "kitty"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "files": [
+    "*.ts",
+    "assets/market-terminal.png",
+    "README.md",
+    "LICENSE",
+    "docs/"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "image": "https://raw.githubusercontent.com/PRELVAS94/pi-market-terminal/main/assets/market-terminal.png"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.3.0",
+    "@earendil-works/pi-tui": "1.3.0",
+    "typebox": "1.3.27",
+    "jiti": "2.7.0",
+    "typescript": "5.9.3",
+    "@types/node": "22.19.19",
+    "prettier": "3.6.2"
+  },
+  "scripts": {
+    "check": "prettier --check . && tsc --noEmit",
+    "test": "node tests/run.mjs",
+    "test:kitty": "node scripts/verify-kitty-transfer.mjs",
+    "prepublishOnly": "npm run check && npm test",
+    "format": "prettier --write ."
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

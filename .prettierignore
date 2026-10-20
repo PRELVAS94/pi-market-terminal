@@ -1,0 +1,5 @@
+node_modules/
+assets/
+*.tgz
+package-lock.json
+tests/*.py
